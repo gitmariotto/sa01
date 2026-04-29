@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Orçamento de Tarefas</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="container">
+
+  <div class="titulo">
+    <h1>Orçamento de Tarefas</h1>
+    <p>Liste suas tarefas, defina as horas necessárias e gere um orçamento profissional na hora.</p>
+  </div>
+
+  <div class="card header">
+    <div class="input-group">
+      <label>Nome do projeto</label>
+      <input type="text" id="nomeProjeto" placeholder="Projeto Web">
+    </div>
+
+    <div class="input-group">
+      <label>Valor por hora (R$)</label>
+      <input type="number" id="valorHora" placeholder="80">
+    </div>
+  </div>
+
+  <div class="card">
+    <h2>Adicionar tarefa</h2>
+
+    <div class="row">
+      <input type="text" id="nomeTarefa" placeholder="Nome da tarefa">
+      <input type="number" id="horasTarefa" placeholder="Horas" class="small">
+
+      <select id="urgencia" class="small">
+        <option value="1">Sem urgência</option>
+        <option value="1.2">Urgência (+20%)</option>
+        <option value="1.5">Muita urgência (+50%)</option>
+      </select>
+
+      <button onclick="adicionarTarefa()">Adicionar</button>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="tarefas-header">
+      <h2>Tarefas (<span id="qtd">0</span>)</h2>
+      <span id="totalHoras">0h totais</span>
+    </div>
+
+    <ul id="listaTarefas"></ul>
+  </div>
+
+  <!-- BOTÃO NOVO -->
+  <button class="gerar-btn" onclick="calcularTotal()">Gerar orçamento</button>
+
+  <!-- RESULTADO MELHORADO -->
+  <div class="resultado">
+    <p id="nomeProjetoResultado">Projeto: —</p>
+    <p id="resumo"></p>
+    <h1>R$ <span id="total">0.00</span></h1>
+  </div>
+
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
